@@ -26,8 +26,11 @@ else
     if [[ "$INSTALL_XUI" =~ ^[Yy]$ || "$INSTALL_XUI" =~ ^[Yy][Ee][Ss]$ ]]; then
         echo "=== installing 3x-ui ==="
         #bash -c "$(curl -Ls https://raw.githubusercontent.com/MHSanaei/3x-ui/master/install.sh)"
+        #VERSION=v2.8.4
+        #bash -c "$(curl -Ls https://raw.githubusercontent.com/MHSanaei/3x-ui/$VERSION/install.sh)"
         VERSION=v2.8.4
-        bash -c "$(curl -Ls https://raw.githubusercontent.com/MHSanaei/3x-ui/$VERSION/install.sh)"
+        bash <(curl -Ls "https://raw.githubusercontent.com/MHSanaei/3x-ui/$VERSION/install.sh") "$VERSION"
+
         echo "3x-ui installed"
     else
         echo "Skip 3x-ui installing"
